@@ -11,7 +11,7 @@
 
 # Backend Technical Assessment
 
-Technical Assessment to Python Backend position in Bravi
+Technical Assessment to Python Backend Position in Bravi
 
 ## Challenge
 
