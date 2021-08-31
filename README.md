@@ -1,11 +1,12 @@
 <div align='center'>
-    <img src='https://user-images.githubusercontent.com/55309160/131540453-713f32a2-202a-48e3-a419-3bc5639ad45e.png'></img><br/><br/>
+    <img src='https://user-images.githubusercontent.com/55309160/131547708-89c3fc11-f1ac-4d98-a109-2bf31883c814.png'></img><br/><br/>
     <h2><b>Chess Challenge</b></h2>
     <img src='https://img.shields.io/badge/Python-3.8-blue'></img>
-    <img src='https://img.shields.io/badge/Django-green'></img>
-    <img src='https://img.shields.io/badge/Django_REST_Framework-red'></img>
-    <img src='https://img.shields.io/badge/postgres-green'></img>
-    <img src='https://img.shields.io/badge/Pytest-red'></img>
+    <img src='https://img.shields.io/badge/Django-3.1.7-green'></img>
+    <img src='https://img.shields.io/badge/Django_REST_Framework-3.12.3-red'></img>
+    <img src='https://img.shields.io/badge/postgres-13-green'></img>
+    <img src='https://img.shields.io/badge/Coverage-5.5-red'></img>
+    <img src='https://img.shields.io/badge/Pytest-6.2.2-red'></img>
 </div>
 
 # Backend Technical Assessment
@@ -39,7 +40,7 @@ docker-compose up -d
 ### Run migrations with
 
 ```bash
-docker-compose exec api python manage.py migrations
+docker-compose exec api python manage.py migrate
 ```
 
 ### To see logs
