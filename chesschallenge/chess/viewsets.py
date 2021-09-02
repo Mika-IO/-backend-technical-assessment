@@ -4,6 +4,8 @@ from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from django.contrib.auth.models import User
 from rest_framework.response import Response
+from .chess import future_knight_positions_in_two_turns
+from .chess import validate_coordinate
 
 class ChessPiecesViewSet(viewsets.ModelViewSet):
     """
@@ -62,17 +64,18 @@ class KnightFuturePositions(viewsets.ViewSet):
         coordinate = request.query_params.get('coordinate')
         if not coordinate:
             return Response({"message": "set a coordinate"})
+        if not validate_coordinate(coordinate):
+            return Response({"message": "invalid coordinate"})
 
         chess_piece = ChessPiece.objects.get(id=pk, name="Knight")
         if chess_piece:
-            first_turn = [1, 2, 3, 4, 5]
-            second_turn = [1, 2, 3, 4, 5]
+            first_turn, second_turn = future_knight_positions_in_two_turns(coordinate)
             data = {
                 "id": chess_piece.id,
                 "name": chess_piece.name,
                 "color": chess_piece.color,
                 "future_coordinates_in_first_turn": first_turn,
-                "future_coordinates_in_second_turn": second_turn,
+                "posible_future_coordinates_in_second_turn": second_turn,
             }
 
         else:

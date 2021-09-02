@@ -42,10 +42,17 @@ docker-compose up -d
 ```bash
 docker-compose exec api python manage.py migrate
 ```
+
 ### To run tests
 
 ```bash
 docker-compose exec api pytest
+```
+
+### To get coverage report
+
+```bash
+docker-compose exec api coverage report -m
 ```
 
 ### To see logs
